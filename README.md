@@ -28,6 +28,18 @@ Este programa permite ver cómo AX cambia después de cada operación.
 
 Tabla de traza — Programa de suma
 
+Tabla de traza — Programa de suma
+
+| Instrucción | AX   | BX   | CX   | IP siguiente | ZF | CF | SF |
+| ----------- | ---- | ---- | ---- | ------------ | -- | -- | -- |
+| MOV AX,000A | 000A | 0000 | 0000 | 0103         | 0  | 0  | 0  |
+| MOV BX,0005 | 000A | 0005 | 0000 | 0106         | 0  | 0  | 0  |
+| MOV CX,0003 | 000A | 0005 | 0003 | 0109         | 0  | 0  | 0  |
+| ADD AX,BX   | 000F | 0005 | 0003 | 010B         | 0  | 0  | 0  |
+| ADD AX,CX   | 0012 | 0005 | 0003 | 010D         | 0  | 0  | 0  |
+| INT 20      | 0012 | 0005 | 0003 | ----         | -  | -  | -  |
+
+
 Checkpoint 1
 
 Captura: capturas/CP1_traza_suma.png
