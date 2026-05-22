@@ -64,6 +64,19 @@ El objetivo fue observar cómo CX disminuye en cada iteración y cómo LOOP regr
 
 Tabla de traza — Bucle LOOP
 
+| Iteración | Instrucción | AX   | CX   | IP siguiente | LOOP |
+| --------- | ----------- | ---- | ---- | ------------ | ---- |
+| 1         | ADD AX,0002 | 0002 | 0004 | 0109         | Sí   |
+| 1         | LOOP 0106   | 0002 | 0003 | 0106         | Sí   |
+| 2         | ADD AX,0002 | 0004 | 0003 | 0109         | Sí   |
+| 2         | LOOP 0106   | 0004 | 0002 | 0106         | Sí   |
+| 3         | ADD AX,0002 | 0006 | 0002 | 0109         | Sí   |
+| 3         | LOOP 0106   | 0006 | 0001 | 0106         | Sí   |
+| 4         | ADD AX,0002 | 0008 | 0001 | 0109         | Sí   |
+| 4         | LOOP 0106   | 0008 | 0000 | 010B         | No   |
+| FIN       | INT 20      | 0008 | 0000 | ----         | -    |
+
+
 Checkpoint 2
 
 Captura: capturas/CP2_traza_loop.png
